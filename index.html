@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissor</title>
+</head>
+<body>
+<script>
+    
+    const playerSelection = prompt("Rock Paper or Scissor?");
+    const computerSelection = random();
+
+    // Make a random choice for the computer
+
+    function random() {
+    let computerSelection = Math.floor(Math.random() * 3) + 1;
+    switch (computerSelection) {
+        case 1: 
+            computerSelection = "Rock";
+        break;
+        case 2: 
+            computerSelection = "Paper";
+        break;
+            case 3: 
+            computerSelection = "Scissor";
+        break;
+    }
+    return computerSelection;
+    }
+
+    random ();
+
+    function singlePlay(playerSelection, computerSelection) {
+        if (playerSelection == "Rock" && computerSelection == "Scissor" ||
+            playerSelection == "Paper" && computerSelection == "Rock" ||
+            playerSelection == "Scissor" && computerSelection == "Paper") {
+        alert("You Won!");
+        } else { alert("You Lost");}
+    }
+
+    singlePlay();
+
+    
+        
+    
+</script>
+    
+</body>
+</html>
