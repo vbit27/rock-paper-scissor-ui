@@ -8,7 +8,7 @@
 <body>
 <script>
     
-    const playerSelection = prompt("Rock Paper or Scissor?");
+    const playerSelection = askForChoice();
     const computerSelection = random();
 
     // Make a random choice for the computer
@@ -17,29 +17,52 @@
     let computerSelection = Math.floor(Math.random() * 3) + 1;
     switch (computerSelection) {
         case 1: 
-            computerSelection = "Rock";
+            computerSelection = "rock";
         break;
         case 2: 
-            computerSelection = "Paper";
+            computerSelection = "paper";
         break;
             case 3: 
-            computerSelection = "Scissor";
+            computerSelection = "scissor";
         break;
     }
     return computerSelection;
     }
 
-    random ();
 
-    function singlePlay(playerSelection, computerSelection) {
-        if (playerSelection == "Rock" && computerSelection == "Scissor" ||
-            playerSelection == "Paper" && computerSelection == "Rock" ||
-            playerSelection == "Scissor" && computerSelection == "Paper") {
-        alert("You Won!");
-        } else { alert("You Lost");}
+    // Turn the choice of the player to lowercas
+
+    function askForChoice() {
+        const playerChoice = prompt("Rock, Paper or Scissor?");
+        return playerChoice.toLowerCase();
     }
 
-    singlePlay();
+    random ();
+
+    // Decide who wins the single round
+
+    function playRound(playerSelection, computerSelection) {
+        if ((playerSelection == "rock" && computerSelection == "scissor") ||
+            (playerSelection == "paper" && computerSelection == "rock") ||
+            (playerSelection == "scissor" && computerSelection == "paper")) 
+        {
+            alert("You Won!");
+        } else if (
+            (playerSelection == "rock" && computerSelection == "paper") ||
+            (playerSelection == "paper" && computerSelection == "scissor") ||
+            (playerSelection == "scissor" && computerSelection == "rock")) 
+        {
+            alert("Computer Won!");
+        } else if (
+            (playerSelection == "rock" && computerSelection == "rock") ||
+            (playerSelection == "paper" && computerSelection == "paper") ||
+            (playerSelection == "scissor" && computerSelection == "scissor")) 
+        {
+            alert("It's a draw. Try again.");
+        }
+    }
+
+    playRound(playerSelection, computerSelection);
 
     
         
