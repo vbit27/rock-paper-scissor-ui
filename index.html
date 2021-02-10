@@ -9,8 +9,10 @@
 <script>
     
 
-    let computerSelection
-    let playerSelection 
+    let computerSelection;
+    let playerSelection;
+    let playerScore = 0;
+    let computerScore = 0;
 
     // Make a random choice for the computer
 
@@ -31,6 +33,22 @@
     }
   
 
+    //five round game 
+    
+    function game() {
+        let i = 0;
+    while (i < 5) {
+        playerSelection = prompt("Rock, Paper or Scissor?");
+        computerSelection = random();
+        playRound(playerSelection, computerSelection);
+        i++;
+    } if (playerScore > computerScore) {
+        alert("You Won the Game!");
+    } else if (playerScore < computerScore) {
+        alert("You Lost the Game!");
+    } else alert("The game is a Draw");
+    }
+
 
     // Decide who wins the single round
 
@@ -40,45 +58,25 @@
             (playerSelection.toLowerCase() == "scissor" && computerSelection == "paper")) 
         {
             console.log("You Won");
-           return alert("You Won!");
+            playerScore++;
         } else if (
             (playerSelection.toLowerCase() == "rock" && computerSelection == "paper") ||
             (playerSelection.toLowerCase() == "paper" && computerSelection == "scissor") ||
             (playerSelection.toLowerCase() == "scissor" && computerSelection == "rock")) 
         {
             console.log("You Lost");
-            return alert("Computer Won!");
+            computerScore++;
         } else if (
             (playerSelection.toLowerCase() == "rock" && computerSelection == "rock") ||
             (playerSelection.toLowerCase() == "paper" && computerSelection == "paper") ||
             (playerSelection.toLowerCase() == "scissor" && computerSelection == "scissor")) 
         {
             console.log("Draw");
-           return alert("It's a draw. Try again.");
         }
     }
 
-    function game() {
-        let i = 0;
-    while (i < 5) {
-        playerSelection = prompt("Rock, Paper or Scissor?");
-        computerSelection = random();
-        playRound(playerSelection, computerSelection);
-        i++;
-    }
-
-    }
-
-    /*play five rounds
-
-    let i = 0;
-    while (i < 5) {
-        playRound(playerSelection, computerSelection);
-        i++;
-    } */
 
     game()
-    //playRound(playerSelection, computerSelection);
     random ();
 
 
