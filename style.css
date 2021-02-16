@@ -85,16 +85,11 @@ font-size: 50px;
 
 .button-container {
     display: flex;
-    width: 100%;
-    background-color: rgb(10, 10, 10);
-    margin: 3em 0 3em 0;
-    text-align: center;
+    width: 100%;   
     height: fit-content;
-    align-items: center;
-    justify-content: center;
-    
+    justify-content: space-evenly;
 }
 
-.rock-button {
-    background: url(https://www.flaticon.com/free-icon/hat_4155940?relhttps://www.flaticon.com/free-icon/hat_4155940?related_id=4155940&origin=packated_id=4155940&origin=pack) no-repeat;
+img {
+    width: 15em;
 }
