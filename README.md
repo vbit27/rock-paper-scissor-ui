@@ -1,3 +1,3 @@
-Rock Paper Scissor
+Rock Paper Scissor with UI
 
-This is the second project from "The Odin Project" and the first one for me that includes Javascript. 
+After creating my first Javascript project wich was only accessible from the console, now I will add UI with what I learned so far.

@@ -1,0 +1,100 @@
+body {
+    background-color: #eeedb1;
+}
+
+
+.title {
+    width: 100%;
+    height: fit-content;
+}
+
+.title h1 {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: cornflowerblue;
+    text-align: center;
+    font-size: 40px;
+}
+
+.score-container {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    height: fit-content;
+    align-items: center;
+}
+
+.human-score-container {
+    width: 15em;
+    background-color: rgb(231, 231, 231);
+    border-radius: 50px;
+    height: fit-content;
+    
+}
+
+.human-score-container p {
+    font-size: 25px;
+}
+
+.human-score-number-container p {
+font-size: 50px;
+}
+
+.cat-score-container {
+    width: 15em;
+    background-color: rgb(231, 231, 231);
+    border-radius: 50px;
+    height: fit-content;
+    
+}
+
+.cat-score-container p {
+    font-size: 25px;
+}
+
+.cat-score-number-container p {
+font-size: 50px;
+}
+
+.choice-container {
+    display: flex;
+    width: 100%;
+    background-color: lawngreen;
+    margin: 3em 0 3em 0;
+    text-align: center;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.human-choice-container {
+    width: 15em;
+    height: 15em;
+    background-color: rgb(231, 231, 231);
+    border-radius: 50px;
+    margin: 2em;
+}
+
+.cat-choice-container {
+    width: 15em;
+    height: 15em;
+    background-color: rgb(231, 231, 231);
+    border-radius: 50px;
+    margin: 2em;
+}
+
+.button-container {
+    display: flex;
+    width: 100%;
+    background-color: rgb(10, 10, 10);
+    margin: 3em 0 3em 0;
+    text-align: center;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.rock-button {
+    background: url(https://www.flaticon.com/free-icon/hat_4155940?relhttps://www.flaticon.com/free-icon/hat_4155940?related_id=4155940&origin=packated_id=4155940&origin=pack) no-repeat;
+}
