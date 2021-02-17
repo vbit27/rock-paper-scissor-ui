@@ -8,22 +8,32 @@ function makeChoice(e) {
     if (e.target !== e.currentTarget) {
         playerChoice = e.target.id;
         playRound(playerChoice, random())
-        addImage();
+        addImageHuman();
+        addImageCat();
 }   e.stopPropagation();
 }
 
 
-const imageChoice = document.querySelector('#img');
+const playerChoiceImage = document.querySelector('#img-human');
 
-function addImage() {    
-    imageChoice.src = `/images/${playerChoice}.png`;
+function addImageHuman() {    
+    playerChoiceImage.src = `/images/${playerChoice}.png`;
 }
+
+const catChoiceImage = document.querySelector('#img-cat');
+
+function addImageCat(){
+    catChoiceImage.src = `/images/${catChoice}.png`;
+}
+
+const humanWins = document.getElementById('human-wins');
+const catWins = document.getElementById('cat-wins');
 
 
 let playerChoice;
+let catChoice;
 
-//let computerSelection;
-//let playerSelection;
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -33,70 +43,74 @@ let computerScore = 0;
 // Make a random choice for the computer
 
     function random() {
-    let computerSelection = Math.floor(Math.random() * 3) + 1;
-    switch (computerSelection) {
+    catChoice = Math.floor(Math.random() * 3) + 1;
+    switch (catChoice) {
         case 1: 
-            computerSelection = "rock";
+            catChoice = "rock";
         break;
         case 2: 
-            computerSelection = "paper";
+            catChoice = "paper";
         break;
             case 3: 
-            computerSelection = "scissor";
+            catChoice = "scissor";
         break;
     }
-    return computerSelection;
+    return catChoice;
     }
   
 
      
     // Decide who wins the single round
 
-    function playRound(playerSelection, computerSelection) {
-        if ((playerSelection.toLowerCase() == "rock" && computerSelection == "scissor") ||
-            (playerSelection.toLowerCase() == "paper" && computerSelection == "rock") ||
-            (playerSelection.toLowerCase() == "scissor" && computerSelection == "paper")) 
-        {
-            console.log("You Won");
-            //playerScore++;
-        } else if (
-            (playerSelection.toLowerCase() == "rock" && computerSelection == "paper") ||
-            (playerSelection.toLowerCase() == "paper" && computerSelection == "scissor") ||
-            (playerSelection.toLowerCase() == "scissor" && computerSelection == "rock")) 
-        {
-            console.log("You Lost");
-            //computerScore++;
-        } else if (
-            (playerSelection.toLowerCase() == "rock" && computerSelection == "rock") ||
-            (playerSelection.toLowerCase() == "paper" && computerSelection == "paper") ||
-            (playerSelection.toLowerCase() == "scissor" && computerSelection == "scissor")) 
-        {
-            console.log("Draw");
-        }
+    function playRound(playerSelection, catChoice) {
+        if (playerScore < 5 && computerScore < 5) {
+            if ((playerSelection.toLowerCase() == "rock" && catChoice == "scissor") ||
+                (playerSelection.toLowerCase() == "paper" && catChoice == "rock") ||
+                (playerSelection.toLowerCase() == "scissor" && catChoice == "paper")) 
+            {
+                console.log("You Won");
+                playerScore++;
+                humanWins.textContent = `${playerScore}`;
+            } else if (
+                (playerSelection.toLowerCase() == "rock" && catChoice == "paper") ||
+                (playerSelection.toLowerCase() == "paper" && catChoice == "scissor") ||
+                (playerSelection.toLowerCase() == "scissor" && catChoice == "rock")) 
+            {
+                console.log("You Lost");
+                computerScore++;
+                catWins.textContent = `${computerScore}`;
+            } else if (
+                (playerSelection.toLowerCase() == "rock" && catChoice == "rock") ||
+                (playerSelection.toLowerCase() == "paper" && catChoice == "paper") ||
+                (playerSelection.toLowerCase() == "scissor" && catChoice == "scissor")) 
+            {
+                console.log("Draw");
+            }
+        } else (playerScore > computerScore) ? alert('You Won') : alert('You Lost')
     }
 
 
 
 
 
-    /*function playRound(playerSelection, computerSelection) {
-        if ((playerSelection.toLowerCase() == "rock" && computerSelection == "scissor") ||
-            (playerSelection.toLowerCase() == "paper" && computerSelection == "rock") ||
-            (playerSelection.toLowerCase() == "scissor" && computerSelection == "paper")) 
+    /*function playRound(playerSelection, catChoice) {
+        if ((playerSelection.toLowerCase() == "rock" && catChoice == "scissor") ||
+            (playerSelection.toLowerCase() == "paper" && catChoice == "rock") ||
+            (playerSelection.toLowerCase() == "scissor" && catChoice == "paper")) 
         {
             console.log("You Won");
             playerScore++;
         } else if (
-            (playerSelection.toLowerCase() == "rock" && computerSelection == "paper") ||
-            (playerSelection.toLowerCase() == "paper" && computerSelection == "scissor") ||
-            (playerSelection.toLowerCase() == "scissor" && computerSelection == "rock")) 
+            (playerSelection.toLowerCase() == "rock" && catChoice == "paper") ||
+            (playerSelection.toLowerCase() == "paper" && catChoice == "scissor") ||
+            (playerSelection.toLowerCase() == "scissor" && catChoice == "rock")) 
         {
             console.log("You Lost");
             computerScore++;
         } else if (
-            (playerSelection.toLowerCase() == "rock" && computerSelection == "rock") ||
-            (playerSelection.toLowerCase() == "paper" && computerSelection == "paper") ||
-            (playerSelection.toLowerCase() == "scissor" && computerSelection == "scissor")) 
+            (playerSelection.toLowerCase() == "rock" && catChoice == "rock") ||
+            (playerSelection.toLowerCase() == "paper" && catChoice == "paper") ||
+            (playerSelection.toLowerCase() == "scissor" && catChoice == "scissor")) 
         {
             console.log("Draw");
         }
