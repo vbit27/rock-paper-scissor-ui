@@ -25,8 +25,8 @@ function startGame(e) {
 //ads image choices for both computer and player
 
 function addChoiceImages() {    
-    playerChoiceImage.src = `/images/${playerChoice}.png`;
-    catChoiceImage.src = `/images/computer-${catChoice}.png`;
+    playerChoiceImage.src = `./images/${playerChoice}.png`;
+    catChoiceImage.src = `./images/computer-${catChoice}.png`;
 
 }
 
