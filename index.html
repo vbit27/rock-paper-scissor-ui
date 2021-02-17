@@ -36,100 +36,16 @@
 <div class="choose-one-container">
     <p>Choose one:</p>
     <div class="button-container">
-        <button class="rock-button">
-            <img src="/images/scissor.png" alt="paw">
-        </button>
-        <button class="paper-button">
-            <img src="/images/scissor.png" alt="paw">
-        </button>
-        <button class="paper-button">
-            <img src="/images/scissor.png" alt="paw">
-        </button>
+            <img id ='rock'  src="/images/scissor.png" alt="paw">
+            <img id ='paper' src="/images/scissor.png" alt="paw">
+            <img id ='scissor' src="/images/scissor.png" alt="paw">
     </div>
 </div>
 
 
 
-<script>
-    
+<script src="script.js"></script>
 
-    let computerSelection;
-    let playerSelection;
-    let playerScore = 0;
-    let computerScore = 0;
-
-    // Make a random choice for the computer
-
-    function random() {
-    let computerSelection = Math.floor(Math.random() * 3) + 1;
-    switch (computerSelection) {
-        case 1: 
-            computerSelection = "rock";
-        break;
-        case 2: 
-            computerSelection = "paper";
-        break;
-            case 3: 
-            computerSelection = "scissor";
-        break;
-    }
-    return computerSelection;
-    }
-  
-
-     
-    // Decide who wins the single round
-
-    function playRound(playerSelection, computerSelection) {
-        if ((playerSelection.toLowerCase() == "rock" && computerSelection == "scissor") ||
-            (playerSelection.toLowerCase() == "paper" && computerSelection == "rock") ||
-            (playerSelection.toLowerCase() == "scissor" && computerSelection == "paper")) 
-        {
-            console.log("You Won");
-            playerScore++;
-        } else if (
-            (playerSelection.toLowerCase() == "rock" && computerSelection == "paper") ||
-            (playerSelection.toLowerCase() == "paper" && computerSelection == "scissor") ||
-            (playerSelection.toLowerCase() == "scissor" && computerSelection == "rock")) 
-        {
-            console.log("You Lost");
-            computerScore++;
-        } else if (
-            (playerSelection.toLowerCase() == "rock" && computerSelection == "rock") ||
-            (playerSelection.toLowerCase() == "paper" && computerSelection == "paper") ||
-            (playerSelection.toLowerCase() == "scissor" && computerSelection == "scissor")) 
-        {
-            console.log("Draw");
-        }
-    }
-
-
-    random ();
-
-
-    
-        /*five round game 
-    
-    game()
-
-
-    function game() {
-        let i = 0;
-    while (i < 5) {
-        playerSelection = prompt("Rock, Paper or Scissor?");
-        computerSelection = random();
-        playRound(playerSelection, computerSelection);
-        i++;
-    } if (playerScore > computerScore) {
-        alert("You Won the Game!");
-    } else if (playerScore < computerScore) {
-        alert("You Lost the Game!");
-    } else alert("The game is a Draw");
-    }
-*/
-
-    
-</script>
     
 </body>
 </html>
