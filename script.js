@@ -1,26 +1,36 @@
   
 
 let choice = document.querySelector('.button-container');
-
 choice.addEventListener('click', makeChoice, false) 
 
 
 function makeChoice(e) {
     if (e.target !== e.currentTarget) {
-        let playerChoice = e.target.id;
+        playerChoice = e.target.id;
         playRound(playerChoice, random())
+        addImage();
 }   e.stopPropagation();
 }
 
 
+const imageChoice = document.querySelector('#img');
 
+function addImage() {    
+    imageChoice.src = `/images/${playerChoice}.png`;
+}
+
+
+let playerChoice;
 
 //let computerSelection;
 //let playerSelection;
 let playerScore = 0;
 let computerScore = 0;
 
-    // Make a random choice for the computer
+    
+
+
+// Make a random choice for the computer
 
     function random() {
     let computerSelection = Math.floor(Math.random() * 3) + 1;
